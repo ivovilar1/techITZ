@@ -12,7 +12,7 @@
     <main>
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-3xl font-bold text-gray-900">Empresas Techs ITZ</h1>
+                <h1 class="text-3xl font-bold text-gray-900">Empresas Tech ITZ</h1>
                 <p class="mt-4 text-gray-600">Painel de empresas de tecnologia da cidade de Imperatriz-MA.</p>
             </div>
             <div class="mt-8 flex justify-center">
@@ -30,24 +30,26 @@
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
                 <div>
-                    <h2 class="text-xl font-semibold text-gray-900">3,376 empresas</h2>
+                    <h2 class="text-xl font-semibold text-gray-900">{{ $totalCompanies }} empresas</h2>
                 </div>
             </div>
             <div class="mt-8 space-y-8">
+                @foreach($this->companies() as $company)
                 <div class="bg-white shadow-md rounded-lg p-6 flex items-center justify-between">
                     <div>
-                        <img src="https://via.placeholder.com/50" alt="Company Logo" class="rounded-full mr-4">
-                        <h3 class="text-lg font-semibold text-gray-900">FullStack Labs</h3>
-                        <p class="text-gray-600">We design and develop websites, iPhone and Android apps, and custom software solutions that are as beautiful as they are functional.</p>
+                        <img src="{{ $company->logo }}" alt="Company Logo" class="rounded-full mr-4">
+                        <h3 class="text-lg font-semibold text-gray-900">{{ $company->name }}</h3>
+                        <p class="text-gray-600">{{ $company->description ?? 'Nenhuma descrição informada'}}</p>
                         <div class="mt-4 space-x-2">
-                            <span class="bg-gray-200 text-gray-700 py-1 px-2 rounded-full text-sm">Web Development</span>
-                            <span class="bg-gray-200 text-gray-700 py-1 px-2 rounded-full text-sm">Mobile App Development</span>
-                            <span class="bg-gray-200 text-gray-700 py-1 px-2 rounded-full text-sm">Android App Development</span>
-                            <span class="bg-gray-200 text-gray-700 py-1 px-2 rounded-full text-sm">UI UX Design</span>
+                            @foreach($company->tags as $tag)
+                                <span class="bg-gray-200 text-gray-700 py-1 px-2 rounded-full text-sm">{{ $tag }}</span>
+                            @endforeach
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </main>
+    {{ $this->companies()->links(data: ['scrollTo' => false]) }}
 </div>
