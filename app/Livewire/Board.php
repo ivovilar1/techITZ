@@ -18,10 +18,7 @@ class Board extends Component
 
     public function render(): View
     {
-        $countCompanies = Company::query()->count();
-        return view('livewire.board', [
-            'totalCompanies' => $countCompanies,
-        ]);
+        return view('livewire.board');
     }
     public function search(): void
     {
