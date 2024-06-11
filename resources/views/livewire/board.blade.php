@@ -31,7 +31,7 @@
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
                 <div>
-                    <h2 class="text-xl font-semibold text-gray-900">{{ $totalCompanies }} empresas</h2>
+                    <h2 class="text-xl font-semibold text-gray-900">{{ $this->companies()->total() }} empresas</h2>
                 </div>
             </div>
             <div class="mt-8 space-y-8">
