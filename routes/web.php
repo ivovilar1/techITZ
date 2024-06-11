@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\Welcome;
+use App\Livewire\Board;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', Welcome::class);
+Route::get('/', Board::class);
