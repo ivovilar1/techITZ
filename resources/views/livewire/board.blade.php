@@ -42,7 +42,7 @@
                         <p class="text-gray-600">{{ $company->description ?? 'Nenhuma descrição informada'}}</p>
                         <div class="mt-4 space-x-2">
                             @foreach($company->tags as $tag)
-                                <span class="bg-gray-200 text-gray-700 py-1 px-2 rounded-full text-sm">{{ $tag }}</span>
+                                <span class="bg-gray-100 text-gray-600 py-1 px-2 rounded-full text-sm">{{ $tag }}</span>
                             @endforeach
                         </div>
                     </div>
