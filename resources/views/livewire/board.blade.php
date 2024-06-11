@@ -17,13 +17,14 @@
             </div>
             <div class="mt-8 flex justify-center">
                 <div class="flex space-x-4">
-                    <input type="text" placeholder="Nome da empresa" class="border rounded-md py-2 px-4 w-96">
-                    <button class="bg-gray-600 text-white py-2 px-4 rounded">Limpar</button>
-                    <button class="bg-purple-600 text-white py-2 px-4 rounded">Buscar</button>
+                    <x-input
+                        wire:model.live="search"
+                        placeholder="Pesquisar"
+                        icon="o-magnifying-glass"
+                        hint="Pesquise pelo nome da empresa"
+                        class="border rounded-md py-2 px-4 w-96"
+                    />
                 </div>
-            </div>
-            <div class="mt-8 flex justify-center space-x-4">
-                <button class="bg-gray-200 text-gray-700 py-2 px-4 rounded">Tech stack</button>
             </div>
         </div>
 
