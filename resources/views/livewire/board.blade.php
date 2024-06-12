@@ -2,7 +2,8 @@
     <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <div class="flex items-center space-x-4">
-                <img src="path/to/logo.png" alt="Logo" class="h-8 w-auto">
+                <img src="{{ asset('logo.png') }}" alt="Logo" class="h-8 w-auto">
+                <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-200 to-fuchsia-400 bg-clip-text text-transparent">ITZ Techs</h1>
             </div>
             <div class="flex items-center space-x-4">
                 <a href="#" class="bg-purple-600 text-white py-2 px-4 rounded">Publicar uma empresa</a>
@@ -16,7 +17,7 @@
                 <p class="mt-4 text-gray-600">Painel de empresas de tecnologia da cidade de Imperatriz-MA.</p>
             </div>
             <div class="mt-8 flex justify-center">
-                <div class="flex space-x-4">
+                <div class="w-full">
                     <x-input
                         wire:model.live="search"
                         placeholder="Pesquisar"
