@@ -2,6 +2,7 @@
 
 use App\Livewire\CompanyBoard;
 use App\Models\Company;
+use Illuminate\Pagination\LengthAwarePaginator;
 use function Pest\Laravel\get;
 
 it('should be able to render component', function () {
@@ -40,4 +41,15 @@ it('should be able to filter by name', function () {
                 ->toBe('Itadori');
             return true;
         });
+});
+
+it('should be able to paginate the result', function () {
+    Company::factory()->count(30)->create();
+
+    Livewire::test(CompanyBoard::class)
+        ->assertSet('companies', function (LengthAwarePaginator $companies) {
+            expect($companies)
+                ->toHaveCount(10);
+            return true;
+    });
 });
