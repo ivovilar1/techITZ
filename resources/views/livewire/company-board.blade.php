@@ -53,5 +53,14 @@
             </div>
         </div>
     </main>
+    <footer class="py-8 text-gray-600 text-center">
+        <p>&copy; {{ now()->year }} TechITZ. Desenvolvido por
+            <a href="https://www.linkedin.com/in/ivo-vilar/"
+               class="cursor-pointer font-semibold text-gray-900"
+            >
+                devI
+            </a>
+        </p>
+    </footer>
     {{ $this->companies()->links(data: ['scrollTo' => false]) }}
 </div>
