@@ -9,7 +9,7 @@ it('should be able to render component', function () {
         ->assertOk();
 });
 
-test('should be able to list all companies', function () {
+it('should be able to list all companies', function () {
     $companies = Company::factory()->count(10)->create();
     $lw = Livewire::test(CompanyBoard::class);
 
@@ -20,4 +20,24 @@ test('should be able to list all companies', function () {
     foreach ($companies as $company) {
         $lw->assertSee($company->name);
     }
+});
+
+it('should be able to filter by name', function () {
+    Company::factory()->create(['name' => 'Itadori']);
+    Company::factory()->create(['name' => 'Sukuna']);
+
+    Livewire::test(CompanyBoard::class)
+        ->assertSet('companies', function ($companies) {
+            expect($companies)
+                ->toHaveCount(2);
+            return true;
+    })
+        ->set('search', 'ita')
+        ->assertSet('companies', function ($companies) {
+            expect($companies)
+                ->toHaveCount(1)
+                ->first()->name
+                ->toBe('Itadori');
+            return true;
+        });
 });
