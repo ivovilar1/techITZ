@@ -11,14 +11,14 @@ use Livewire\Component;
 use Livewire\WithPagination;
 
 /** @property-read LengthAwarePaginator|Company[] $companies */
-class Board extends Component
+class CompanyBoard extends Component
 {
     use WithPagination;
     public ?string $search = null;
 
     public function render(): View
     {
-        return view('livewire.board');
+        return view('livewire.company-board');
     }
     public function search(): void
     {
