@@ -8,7 +8,16 @@
                 id="cnpj"
                 placeholder="Digite o CNPJ"
                 class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
-            />
+            >
+                <x-slot:append>
+                    <x-button
+                        icon="o-magnifying-glass"
+                        class="p-3 border border-purple-500 rounded-lg bg-gray-800 focus:outline-none focus:border-purple-700 rounded"
+                        wire:click="searchCNPJ"
+                        spinner="searchCNPJ"
+                    />
+                </x-slot:append>
+            </x-input>
             @error('cnpj')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
