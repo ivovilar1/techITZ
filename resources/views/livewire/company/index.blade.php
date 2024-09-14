@@ -6,7 +6,12 @@
                 <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-200 to-fuchsia-400 bg-clip-text text-transparent">techITZ</h1>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="#" class="bg-[#7F3F98] hover:bg-[#9D50BB] text-white py-2 px-4 rounded">Publicar uma empresa</a>
+                <x-button
+                    class="bg-[#7F3F98] hover:bg-[#9D50BB] text-white py-2 px-4 rounded"
+                    @click="$dispatch('company::create')"
+                >
+                    Publicar uma empresa
+                </x-button>
             </div>
         </div>
     </header>
@@ -65,4 +70,5 @@
         </p>
     </footer>
     {{ $this->companies()->links(data: ['scrollTo' => false]) }}
+    <livewire:company.create />
 </div>
