@@ -24,12 +24,13 @@ class Create extends Component
     #[On('company::create')]
     public function openDrawer(): void
     {
+        $this->reset();
         $this->drawer = true;
     }
 
     public function searchCNPJ(): void
     {
-        $data = SearchCnpj::execute('19131243000197');
+        $data = SearchCnpj::execute($this->cnpj);
         $this->name = $data['name'];
         $this->description = $data['description'];
     }
