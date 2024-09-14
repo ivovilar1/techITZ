@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Company;
 
 use App\Models\Company;
 use Illuminate\Database\Eloquent\Builder;
@@ -11,14 +11,14 @@ use Livewire\Component;
 use Livewire\WithPagination;
 
 /** @property-read LengthAwarePaginator|Company[] $companies */
-class CompanyBoard extends Component
+class Index extends Component
 {
     use WithPagination;
     public ?string $search = null;
 
     public function render(): View
     {
-        return view('livewire.company-board');
+        return view('livewire.company.index');
     }
     public function search(): void
     {

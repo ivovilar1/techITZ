@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\CompanyBoard;
+use App\Livewire\Company;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', CompanyBoard::class)->name('home');
+Route::get('/', Company\Index::class)->name('home');
