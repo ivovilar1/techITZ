@@ -44,7 +44,7 @@
                 @foreach($this->companies() as $company)
                     <div class="shadow-md rounded-lg p-6 flex items-center justify-between bg-[#2F1A4E] text-[#FFFFFF]">
                         <div class="flex items-center">
-                            <img src="{{ $company->logo }}" alt="Company Logo" class="rounded-full mr-4 h-10 w-10 bg-gray-200">
+                            <img src="{{ asset('/storage/' . $company->logo ?? null) }}" alt="Company Logo" class="rounded-full mr-4 h-20 w-20 bg-gray-200">
                             <div>
                                 <h3 class="text-lg font-semibold">{{ $company->name }}</h3>
                                 <p>{{ $company->description ?? 'Nenhuma descrição informada'}}</p>
