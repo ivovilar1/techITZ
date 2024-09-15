@@ -22,4 +22,9 @@ class Company extends Model
             'tags' => 'array',
         ];
     }
+    public function setTagsAttribute($value): void
+    {
+        $formattedTags = array_map('strtoupper', $value);
+        $this->attributes['tags'] = json_encode($formattedTags);
+    }
 }
