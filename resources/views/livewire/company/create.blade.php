@@ -41,7 +41,7 @@
                 wire:model="logo"
                 id="logo"
                 class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
-                hint="Apenas imagens no formato: pnj, jpeg, jpg"
+                hint="Apenas imagens com no máximo 1MB e no formato: pnj, jpeg, jpg"
                 accept="image"
             />
             @error('logo')
