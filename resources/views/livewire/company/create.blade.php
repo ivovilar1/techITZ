@@ -1,5 +1,5 @@
 <x-drawer wire:model="drawer" class="w-11/12 lg:w-1/3 min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-800 to-black" right>
-    <form wire:submit.prevent="saveCompany">
+    <form wire:submit.prevent="storeCompany">
         <div class="mb-6">
             <label for="CNPJ" class="block text-white font-medium mb-2">CNPJ</label>
             <x-input
@@ -25,7 +25,7 @@
         <div class="mb-6">
             <label for="name" class="block text-white font-medium mb-2">Nome da Empresa</label>
             <x-input
-                wire:model.lazy="name"
+                wire:model="name"
                 type="text"
                 id="name"
                 placeholder="Digite o nome da empresa"
@@ -51,7 +51,7 @@
         <div class="mb-6">
             <label for="description" class="block text-white font-medium mb-2">Descrição</label>
             <x-textarea
-                wire:model.lazy="description"
+                wire:model="description"
                 id="description"
                 rows="4"
                 placeholder="Digite uma breve descrição da empresa"
@@ -65,7 +65,7 @@
             <label for="tags" class="block text-white font-medium mb-2">Tecnologias</label>
             <x-tags
                 class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
-                wire:model.lazy="tags"
+                wire:model="tags"
                 icon="o-tag"
                 hint="Aperte enter para adicionar uma nova tecnologia"
             />

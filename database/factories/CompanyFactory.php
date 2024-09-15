@@ -13,6 +13,7 @@ class CompanyFactory extends Factory
     {
         $tags = ['Front','Back', 'Mobile'];
         return [
+            'cnpj' => $this->faker->unique()->randomNumber(8, true),
             'name' => $this->faker->company,
             'description' => $this->faker->paragraph,
             'tags' => $tags

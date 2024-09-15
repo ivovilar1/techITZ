@@ -10,6 +10,7 @@ return new class extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
+            $table->string('cnpj', 14)->unique();
             $table->string('name', 100);
             $table->string('logo')->nullable();
             $table->string('description')->nullable();
