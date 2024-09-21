@@ -9,7 +9,8 @@
                 </span>
                 </label>
                 <x-input
-                    wire:model.lazy="cnpj"
+                    wire:model.live="cnpj"
+                    wire:change="searchCNPJ"
                     x-mask="99.999.999/9999-99"
                     type="text"
                     id="cnpj"
@@ -21,7 +22,7 @@
                     <x-slot:append>
                         <x-button
                             icon="o-magnifying-glass"
-                            class="p-3 border border-purple-500 rounded-lg bg-gray-800 focus:outline-none focus:border-purple-700 rounded"
+                            class="p-3 border border-purple-500 rounded-lg bg-gray-800 focus:outline-none focus:border-purple-700"
                             wire:click="searchCNPJ"
                             spinner="searchCNPJ"
                         />
@@ -134,7 +135,11 @@
             <x-button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 mb-4 rounded-lg transition duration-300" @click="$wire.modal = false">
                 Voltar
             </x-button>
-            <x-button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition duration-300">
+            <x-button
+                type="submit"
+                spinner="storeCompany"
+                class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition duration-300"
+            >
                 Cadastrar Empresa
             </x-button>
         </div>

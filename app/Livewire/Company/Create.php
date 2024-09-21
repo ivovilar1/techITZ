@@ -81,4 +81,8 @@ class Create extends Component
 
         $this->dispatch('company::reload')->to('company.index');
     }
+    public function updatedCnpj(): void
+    {
+        $this->resetErrorBag('cnpj');
+    }
 }
