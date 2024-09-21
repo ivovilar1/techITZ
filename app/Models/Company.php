@@ -11,9 +11,13 @@ class Company extends Model
 
     protected $fillable = [
         'cnpj',
+        'email',
         'name',
         'logo',
         'description',
+        'linkedin',
+        'twitter',
+        'instagram',
         'tags'
     ];
     protected function casts(): array

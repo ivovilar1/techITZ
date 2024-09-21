@@ -14,8 +14,12 @@ class CompanyFactory extends Factory
         $tags = ['Front','Back', 'Mobile'];
         return [
             'cnpj' => $this->faker->unique()->randomNumber(8, true),
+            'email' => $this->faker->unique()->safeEmail(),
             'name' => $this->faker->company,
             'description' => $this->faker->paragraph,
+            'linkedin'  => 'https://www.linkedin.com/in/' . $this->faker->userName,
+            'twitter'   => 'https://x.com/' . $this->faker->userName,
+            'instagram' => 'https://instagram.com' . $this->faker->userName,
             'tags' => $tags
         ];
     }

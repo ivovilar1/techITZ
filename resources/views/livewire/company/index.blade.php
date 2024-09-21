@@ -47,7 +47,26 @@
                             <img src="{{ asset('/storage/' . $company->logo ?? null) }}" alt="Company Logo" class="rounded-full mr-4 h-20 w-20 bg-gray-200">
                             <div>
                                 <h3 class="text-lg font-semibold">{{ $company->name }}</h3>
-                                <p>{{ $company->description ?? 'Nenhuma descrição informada'}}</p>
+                                <p>{{ $company->description ?? 'Nenhuma descrição informada' }}</p>
+                                <p class="text-sm mt-2"><i class="fas fa-envelope"></i> {{ $company->email ?? 'Email não informado' }}</p>
+                                <div class="mt-4 space-x-2">
+                                    @if($company->linkedin)
+                                        <a href="{{ $company->linkedin }}" target="_blank" class="text-blue-600">
+                                            <x-icon name="fab.linkedin" />
+                                        </a>
+                                    @endif
+                                    @if($company->twitter)
+                                        <a href="{{ $company->twitter }}" target="_blank" class="text-blue-400">
+                                            <x-icon name="fab.twitter" />
+                                        </a>
+                                    @endif
+                                    @if($company->instagram)
+                                        <a href="{{ $company->instagram }}" target="_blank" class="text-pink-500">
+                                            <x-icon name="fab.instagram" />
+                                        </a>
+                                    @endif
+                                </div>
+
                                 <div class="mt-4 space-x-2">
                                     @foreach($company->tags as $tag)
                                         <span class="bg-[#6A0DAD] text-[#FFFFFF] py-1 px-2 rounded-full text-sm">{{ $tag }}</span>

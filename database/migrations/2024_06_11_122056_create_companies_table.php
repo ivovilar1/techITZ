@@ -10,10 +10,14 @@ return new class extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->string('cnpj', 14)->unique();
-            $table->string('name', 100);
+            $table->string('cnpj', 14)->unique()->index();
+            $table->string('email', 200)->unique()->index();
+            $table->string('name', 200);
             $table->string('logo')->nullable();
             $table->string('description')->nullable();
+            $table->string('linkedin', 200)->nullable();
+            $table->string('twitter', 200)->nullable();
+            $table->string('instagram', 200)->nullable();
             $table->json('tags');
             $table->timestamps();
         });
