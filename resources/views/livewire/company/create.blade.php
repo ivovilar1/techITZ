@@ -1,13 +1,19 @@
 <x-drawer wire:model="drawer" class="w-11/12 lg:w-1/3 min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-800 to-black" right>
     <form wire:submit.prevent="storeCompany">
         <div class="mb-6">
-            <label for="CNPJ" class="block text-white font-medium mb-2">CNPJ</label>
+            <label for="CNPJ" class="block text-white font-medium mb-2">
+                CNPJ
+                <span class="text-red-500">
+                    *
+                </span>
+            </label>
             <x-input
                 wire:model.lazy="cnpj"
                 type="text"
                 id="cnpj"
                 placeholder="Digite o CNPJ"
                 class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
+                required
             >
                 <x-slot:append>
                     <x-button
@@ -23,26 +29,38 @@
             @enderror
         </div>
         <div class="mb-6">
-            <label for="email" class="block text-white font-medium mb-2">Email</label>
+            <label for="email" class="block text-white font-medium mb-2">
+                Email
+                <span class="text-red-500">
+                    *
+                </span>
+            </label>
             <x-input
                 wire:model="email"
                 type="email"
                 id="email"
                 placeholder="Digite o email da empresa"
                 class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
+                required
             />
             @error('email')
             <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
         </div>
         <div class="mb-6">
-            <label for="name" class="block text-white font-medium mb-2">Nome da Empresa</label>
+            <label for="name" class="block text-white font-medium mb-2">
+                Nome da Empresa
+                <span class="text-red-500">
+                    *
+                </span>
+            </label>
             <x-input
                 wire:model="name"
                 type="text"
                 id="name"
                 placeholder="Digite o nome da empresa"
                 class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
+                required
             />
             @error('name')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
