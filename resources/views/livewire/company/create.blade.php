@@ -15,6 +15,7 @@
                     id="cnpj"
                     placeholder="Digite o CNPJ"
                     class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
+                    error-class="text-purple-500"
                     required
                 >
                     <x-slot:append>
@@ -26,9 +27,6 @@
                         />
                     </x-slot:append>
                 </x-input>
-                @error('cnpj')
-                <span class="text-red-500 text-sm">{{ $message }}</span>
-                @enderror
             </div>
             <div class="mb-6">
                 <label for="email" class="block text-white font-medium mb-2">
@@ -43,11 +41,9 @@
                     id="email"
                     placeholder="Digite o email da empresa"
                     class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
+                    error-class="text-purple-500"
                     required
                 />
-                @error('email')
-                <span class="text-red-500 text-sm">{{ $message }}</span>
-                @enderror
             </div>
         </div>
         <div class="mb-6">
@@ -63,11 +59,9 @@
                 id="name"
                 placeholder="Digite o nome da empresa"
                 class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
+                error-class="text-purple-500"
                 required
             />
-            @error('name')
-                <span class="text-red-500 text-sm">{{ $message }}</span>
-            @enderror
         </div>
         <div class="mb-6">
             <label for="logo" class="block text-white font-medium mb-2">Logo da Empresa</label>
@@ -77,10 +71,8 @@
                 class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
                 hint="Apenas imagens com no máximo 1MB e no formato: pnj, jpeg, jpg"
                 accept="image"
+                error-class="text-purple-500"
             />
-            @error('logo')
-                <span class="text-red-500 text-sm">{{ $message }}</span>
-            @enderror
         </div>
         <div class="mb-6">
             <label for="description" class="block text-white font-medium mb-2">Descrição</label>
@@ -90,10 +82,8 @@
                 rows="4"
                 placeholder="Digite uma breve descrição da empresa"
                 class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
+                error-class="text-purple-500"
             />
-            @error('description')
-                <span class="text-red-500 text-sm">{{ $message }}</span>
-            @enderror
         </div>
         <div class="grid grid-cols-3 space-x-2">
             <div class="mb-6">
@@ -104,10 +94,8 @@
                     id="linkedin"
                     placeholder="Copie a url do linkedin da empresa"
                     class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
+                    error-class="text-purple-500"
                 />
-                @error('linkedin')
-                <span class="text-red-500 text-sm">{{ $message }}</span>
-                @enderror
             </div>
             <div class="mb-6">
                 <label for="twitter" class="block text-white font-medium mb-2">X</label>
@@ -117,10 +105,8 @@
                     id="twitter"
                     placeholder="Copie a url do X da empresa"
                     class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
+                    error-class="text-purple-500"
                 />
-                @error('twitter')
-                <span class="text-red-500 text-sm">{{ $message }}</span>
-                @enderror
             </div>
             <div class="mb-6">
                 <label for="instagram" class="block text-white font-medium mb-2">Instagram</label>
@@ -130,10 +116,8 @@
                     id="instagram"
                     placeholder="Copie a url do instagram da empresa"
                     class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
+                    error-class="text-purple-500"
                 />
-                @error('instagram')
-                <span class="text-red-500 text-sm">{{ $message }}</span>
-                @enderror
             </div>
         </div>
         <div class="mb-6">
@@ -143,10 +127,8 @@
                 wire:model="tags"
                 icon="o-tag"
                 hint="Aperte enter para adicionar uma nova tecnologia"
+                error-class="text-purple-500"
             />
-            @error('tags')
-                <span class="text-red-500 text-sm">{{ $message }}</span>
-            @enderror
         </div>
         <div class="grid grid-cols-2 space-x-2">
             <x-button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 mb-4 rounded-lg transition duration-300" @click="$wire.modal = false">

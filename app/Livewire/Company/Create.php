@@ -6,7 +6,6 @@ use App\Models\Company;
 use App\Services\SearchCnpj;
 use Illuminate\Contracts\View\View;
 use Livewire\Attributes\On;
-use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Mary\Traits\Toast;
@@ -16,23 +15,14 @@ class Create extends Component
     use WithFileUploads;
     use Toast;
     public bool $modal = false;
-    #[Validate]
     public ?string $cnpj = null;
-    #[Validate]
     public ?string $email = null;
-    #[Validate]
     public ?string $name = null;
-    #[Validate]
     public $logo = null;
-    #[Validate]
     public ?string $description = null;
-    #[Validate]
     public ?string $linkedin = null;
-    #[Validate]
     public ?string $twitter = null;
-    #[Validate]
     public ?string $instagram = null;
-    #[Validate]
     public array $tags = [];
 
     public function render(): View
