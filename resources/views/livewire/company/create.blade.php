@@ -10,6 +10,7 @@
                 </label>
                 <x-input
                     wire:model.lazy="cnpj"
+                    x-mask="99.999.999/9999-99"
                     type="text"
                     id="cnpj"
                     placeholder="Digite o CNPJ"
