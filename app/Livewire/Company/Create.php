@@ -15,7 +15,7 @@ class Create extends Component
 {
     use WithFileUploads;
     use Toast;
-    public bool $drawer = false;
+    public bool $modal = false;
     #[Validate]
     public ?string $cnpj = null;
     #[Validate]
@@ -56,10 +56,10 @@ class Create extends Component
     }
 
     #[On('company::create')]
-    public function openDrawer(): void
+    public function openModal(): void
     {
         $this->reset();
-        $this->drawer = true;
+        $this->modal = true;
     }
 
     public function searchCNPJ(): void
@@ -76,7 +76,7 @@ class Create extends Component
             $data['logo'] = $this->logo->store('company', 'public');
         }
         Company::query()->create($data);
-        $this->drawer = false;
+        $this->modal = false;
 
         $this->success('Empresa cadastrada com sucesso!');
 
