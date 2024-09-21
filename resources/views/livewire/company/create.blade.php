@@ -23,6 +23,19 @@
             @enderror
         </div>
         <div class="mb-6">
+            <label for="email" class="block text-white font-medium mb-2">Email</label>
+            <x-input
+                wire:model="email"
+                type="email"
+                id="email"
+                placeholder="Digite o email da empresa"
+                class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
+            />
+            @error('email')
+            <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="mb-6">
             <label for="name" class="block text-white font-medium mb-2">Nome da Empresa</label>
             <x-input
                 wire:model="name"
@@ -59,6 +72,45 @@
             />
             @error('description')
                 <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="mb-6">
+            <label for="linkedin" class="block text-white font-medium mb-2">Linkedin</label>
+            <x-input
+                wire:model="linkedin"
+                type="text"
+                id="linkedin"
+                placeholder="Copie a url do linkedin da empresa"
+                class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
+            />
+            @error('linkedin')
+            <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="mb-6">
+            <label for="twitter" class="block text-white font-medium mb-2">X</label>
+            <x-input
+                wire:model="twitter"
+                type="text"
+                id="twitter"
+                placeholder="Copie a url do X da empresa"
+                class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
+            />
+            @error('twitter')
+            <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="mb-6">
+            <label for="instagram" class="block text-white font-medium mb-2">Instagram</label>
+            <x-input
+                wire:model="instagram"
+                type="text"
+                id="instagram"
+                placeholder="Copie a url do instagram da empresa"
+                class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
+            />
+            @error('instagram')
+            <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
         </div>
         <div class="mb-6">
