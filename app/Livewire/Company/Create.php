@@ -3,8 +3,10 @@
 namespace App\Livewire\Company;
 
 use App\Models\Company;
-use App\Services\SearchCnpj;
+use App\Rules\CnpjValidation;
+use App\Services\CnpjService;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Client\RequestException;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -33,7 +35,7 @@ class Create extends Component
     public function rules(): array
     {
         return [
-            'cnpj' => 'string|max:14|min:14|required|unique:companies,cnpj',
+            'cnpj' => ['string','required','unique:companies,cnpj', new CnpjValidation],
             'email' => 'required|email|email:rfc,filter|max:200|unique:companies,email',
             'name' => 'string|required|max:100|min:3',
             'description' => 'string|nullable|max:255',
@@ -53,11 +55,17 @@ class Create extends Component
         $this->modal = true;
     }
 
-    public function searchCNPJ(): void
+    public function searchCNPJ(CnpjService $cnpjService): void
     {
-        $data = SearchCnpj::execute($this->cnpj);
-        $this->name = $data['name'];
-        $this->description = $data['description'];
+        try {
+            $data = $cnpjService->search($this->cnpj);
+            $this->name = $data['nome_fantasia'];
+            $this->description = $data['cnae_fiscal_descricao'];
+        } catch (RequestException $e) {
+            $error = $e->response->json();
+            $message = $error['message'] ?? 'Algo inesperado aconteceu';
+            $this->addError('cnpj', $message);
+        }
     }
 
     public function storeCompany(): void
