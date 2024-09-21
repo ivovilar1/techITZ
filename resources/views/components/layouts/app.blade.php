@@ -12,4 +12,13 @@
     <x-toast />
     {{ $slot }}
 </body>
+<footer class="shadow bg-[#1C1C2E] py-8 text-[#B3A1C2] text-center">
+    <p>&copy; {{ now()->year }} TechITZ. Desenvolvido por
+        <a href="https://www.linkedin.com/in/ivo-vilar/"
+           class="cursor-pointer font-semibold text-[#FFFFFF] hover:text-[#9D50BB]"
+        >
+            devIV
+        </a>
+    </p>
+</footer>
 </html>

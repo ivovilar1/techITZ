@@ -79,15 +79,6 @@
             </div>
         </div>
     </main>
-    <footer class="py-8 text-[#B3A1C2] text-center">
-        <p>&copy; {{ now()->year }} TechITZ. Desenvolvido por
-            <a href="https://www.linkedin.com/in/ivo-vilar/"
-               class="cursor-pointer font-semibold text-[#FFFFFF] hover:text-[#9D50BB]"
-            >
-                devI
-            </a>
-        </p>
-    </footer>
     {{ $this->companies()->links(data: ['scrollTo' => false]) }}
     <livewire:company.create />
 </div>
