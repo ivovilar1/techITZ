@@ -49,6 +49,7 @@ class Create extends Component
     public function openModal(): void
     {
         $this->reset();
+        $this->resetValidation();
         $this->modal = true;
     }
 
