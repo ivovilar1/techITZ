@@ -56,8 +56,8 @@
                                         </a>
                                     @endif
                                     @if($company->twitter)
-                                        <a href="{{ $company->twitter }}" target="_blank" class="text-blue-400">
-                                            <x-icon name="fab.twitter" />
+                                        <a href="{{ $company->twitter }}" target="_blank" class="text-black-400">
+                                            <x-icon name="fab.x-twitter" />
                                         </a>
                                     @endif
                                     @if($company->instagram)
