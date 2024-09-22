@@ -8,16 +8,16 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="min-h-screen font-sans antialiased bg-base-200/50 dark:bg-base-200">
+<body class="min-h-screen font-sans antialiased shadow bg-[#1C1C2E] flex flex-col">
     <x-toast />
     {{ $slot }}
 </body>
-<footer class="shadow bg-[#1C1C2E] py-8 text-[#B3A1C2] text-center">
+<footer class="shadow bg-[#1C1C2E] py-8 text-[#B3A1C2] text-center mt-auto">
     <p>&copy; {{ now()->year }} TechITZ. Desenvolvido por
         <a href="https://www.linkedin.com/in/ivo-vilar/"
            class="cursor-pointer font-semibold text-[#FFFFFF] hover:text-[#9D50BB]"
         >
-            devIV
+            devI
         </a>
     </p>
 </footer>
