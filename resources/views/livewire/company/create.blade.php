@@ -111,7 +111,12 @@
             </div>
         </div>
         <div class="mb-6">
-            <label for="tags" class="block text-white font-medium mb-2">Tecnologias</label>
+            <label for="tags" class="block text-white font-medium mb-2">
+                Tecnologias
+                <span class="text-red-500">
+                    *
+                </span>
+            </label>
             <x-tags
                 class="w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
                 wire:model="tags"
