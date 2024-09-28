@@ -17,7 +17,7 @@
         <a href="https://www.linkedin.com/in/ivo-vilar/"
            class="cursor-pointer font-semibold text-[#FFFFFF] hover:text-[#9D50BB]"
         >
-            devI
+            devIA
         </a>
     </p>
 </footer>
