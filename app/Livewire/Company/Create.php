@@ -58,6 +58,10 @@ class Create extends Component
     public function searchCNPJ(CnpjService $cnpjService): void
     {
         try {
+            if (!$this->cnpj) {
+                $this->addError('cnpj', 'Você esqueceu de informar o CNPJ');
+                return;
+            }
             $data = $cnpjService->search($this->cnpj);
             $this->name = $data['nome_fantasia'];
             $this->description = $data['cnae_fiscal_descricao'];

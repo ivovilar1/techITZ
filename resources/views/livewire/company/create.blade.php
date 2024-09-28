@@ -139,6 +139,7 @@
                 type="submit"
                 spinner="storeCompany"
                 class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition duration-300"
+
             >
                 Cadastrar Empresa
             </x-button>
