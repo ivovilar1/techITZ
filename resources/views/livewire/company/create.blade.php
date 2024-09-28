@@ -65,17 +65,6 @@
             />
         </div>
         <div class="mb-6">
-            <label for="logo" class="block text-white font-medium mb-2">Logo da Empresa</label>
-            <x-file
-                wire:model="logo"
-                id="logo"
-                class="overflow-hidden w-full p-3 border border-purple-500 rounded-lg bg-gray-800 text-white focus:outline-none focus:border-purple-700"
-                hint="Apenas imagens com no máximo 1MB e no formato: png, jpeg, jpg"
-                accept="image/png, image/jpeg, image/jpg"
-                error-class="text-purple-500"
-            />
-        </div>
-        <div class="mb-6">
             <label for="description" class="block text-white font-medium mb-2">Descrição</label>
             <x-textarea
                 wire:model="description"
@@ -128,6 +117,17 @@
                 wire:model="tags"
                 icon="o-tag"
                 hint="Aperte enter para adicionar uma nova tecnologia"
+                error-class="text-purple-500"
+            />
+        </div>
+        <div class="mb-6">
+            <label for="logo" class="block text-white font-medium mb-2">Logo da Empresa</label>
+            <x-file
+                wire:model="logo"
+                id="logo"
+                class="overflow-hidden w-full p-3 rounded-lg text-white focus:outline-none focus:border-purple-700"
+                hint="Apenas imagens com no máximo 1MB e no formato: png, jpeg, jpg"
+                accept="image/png, image/jpeg, image/jpg"
                 error-class="text-purple-500"
             />
         </div>
